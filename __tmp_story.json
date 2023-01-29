@@ -1,0 +1,16 @@
+{
+    "headline": "Welcome to the world newborn, you are the chosen one.\nPick your side, Sunavalon or Kashtira",
+    "choices": ["Sunavalon", "Kashtira"],
+    "option": [
+        {
+            "headline": "I see a potential on you, I will get you soon.",
+            "choices": [],
+            "option": []
+        },
+        {
+            "headline": "You've picked the Kashtira side, why not. The dark lord will see you soon.",
+            "choices": [],
+            "option": []
+        }
+    ]
+}
