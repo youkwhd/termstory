@@ -3,7 +3,7 @@
 (require json)
 
 ;; (define story-file-path "")
-(define story-file (open-input-file "./data/stories/__tmp_story.json"))
+(define story-file (open-input-file "./data/stories/demo.json"))
 (define story-json (read-json story-file))
 
 (define (display-choices lst __idx)
