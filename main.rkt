@@ -3,7 +3,7 @@
 (require json)
 
 ;; (define story-file-path "")
-(define story-file (open-input-file "./__tmp_story.json"))
+(define story-file (open-input-file "./data/stories/__tmp_story.json"))
 (define story-json (read-json story-file))
 
 (define (display-choices lst __idx)
@@ -19,11 +19,11 @@
   (newline)
 
   (cond 
-    [(empty? (hash-ref story-json 'option)) (newline)]
+    [(empty? (hash-ref story-json 'options-action)) (newline)]
     [else
-      (display-choices (hash-ref story-json 'choices) 1)
+      (display-choices (hash-ref story-json 'options-input) 1)
       (display "> choose: ")
-      (story-begin (list-ref (hash-ref story-json 'option) (- (string->number (read-line)) 1)))]))
+      (story-begin (list-ref (hash-ref story-json 'options-action) (- (string->number (read-line)) 1)))]))
 
 (story-begin story-json)
 (close-input-port story-file)

@@ -1,0 +1,54 @@
+{
+    "headline": "You woke in a small room with one light bulb on, the atmosphere is freaking you out\nthere's 2 door in front of you, choose what to do.",
+    "options-input": ["Open the first door", "Open the second door"],
+    "options-action": [
+        {
+            "headline": "You see.. (unfinished)",
+            "options-input": [],
+            "options-action": []
+        },
+        {
+            "headline": "You opened the second door, there's nothing but a dark valley in front of you.",
+            "options-input": ["Walk through", "Go back to the room"],
+            "options-action": [
+                {
+                    "headline": "You can't see anything but darkness, there's still a chance to go back, or you can just gamble and go straight in to the darkness.",
+                    "options-input": ["Straight into the darkness", "Go back"],
+                    "options-action": [
+                        {
+                            "headline": "You encountered a beast-like creature, staring at you with an eye widely opened.",
+                            "options-input": ["Run", "Walk calmly, as slow as possible", "Stare at the creature back"],
+                            "options-action": [
+                                {
+                                    "headline": "You ran, even if the creature didn't do anything, you are lost forever in the darkness, with no stamina left, starving to death.",
+                                    "options-input": [],
+                                    "options-action": []
+                                },
+                                {
+                                    "headline": "You walk slowly pass the creature, to then tripped and fall off, and you woke up from your dream.",
+                                    "options-input": [],
+                                    "options-action": []
+                                },
+                                {
+                                    "headline": "You stare the creature back, until you fall off, waking up from your dream.",
+                                    "options-input": [],
+                                    "options-action": []
+                                }
+                            ]
+                        },
+                        {
+                            "headline": "You gain your way back, but cannot seem to progress, you are mostly lost out your way, lost in the darkness forever.",
+                            "options-input": [],
+                            "options-action": []
+                        }
+                    ]
+                },
+                {
+                    "headline": "The room you woke up in had nowhere to be found, and you are mostly lost forever.",
+                    "options-input": [],
+                    "options-action": []
+                }
+            ]
+        }
+    ]
+}
