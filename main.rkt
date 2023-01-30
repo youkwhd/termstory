@@ -6,6 +6,9 @@
 (define story-file (open-input-file "./data/stories/demo.json"))
 (define story-json (read-json story-file))
 
+(define (clear-terminal-screen)
+  (displayln "\033c"))
+
 (define (display-choices lst __idx)
   (cond 
     [(empty? lst) (newline)]
@@ -14,7 +17,7 @@
       (display-choices (rest lst) (+ __idx 1))]))
 
 (define (story-begin story-json) 
-  (newline)
+  (clear-terminal-screen)
   (displayln (hash-ref story-json 'headline))
   (newline)
 
