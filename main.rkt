@@ -16,7 +16,7 @@
       (printf "(~a) ~a\n" __idx (first lst))
       (display-choices (rest lst) (+ __idx 1))]))
 
-(define (story-begin story-json) 
+(define (story-iter story-json) 
   (clear-terminal-screen)
   (displayln (hash-ref story-json 'headline))
   (newline)
@@ -26,7 +26,15 @@
     [else
       (display-choices (hash-ref story-json 'options-input) 1)
       (display "> choose: ")
-      (story-begin (list-ref (hash-ref story-json 'options-action) (- (string->number (read-line)) 1)))]))
+      (story-iter (list-ref (hash-ref story-json 'options-action) (- (string->number (read-line)) 1)))]))
+
+(define (story-begin story-json)
+  (clear-terminal-screen)
+  (cond 
+    [(not (vector-member "--skip-title" (current-command-line-arguments)))
+     (printf "Story Title: ~a\nPress enter to continue" (hash-ref story-json 'title))
+     (read-line)])
+  (story-iter (hash-ref story-json 'main-story)))
 
 (story-begin story-json)
 (close-input-port story-file)
