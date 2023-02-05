@@ -17,7 +17,9 @@
       (display-choices (rest lst) (+ __idx 1))]))
 
 (define (story-iter story-json) 
-  (clear-terminal-screen)
+  (if (not (vector-member "--no-terminal-clear" (current-command-line-arguments)))
+    (clear-terminal-screen))
+
   (displayln (hash-ref story-json 'headline))
   (newline)
 
