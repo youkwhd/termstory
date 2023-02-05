@@ -1,15 +1,13 @@
 #lang racket
 
 (require json)
+(require "terminal.rkt")
 
 (define termstory-version 0.1)
 
 ;; (define story-file-path "")
 (define story-file (open-input-file "./data/stories/demo.json"))
 (define story-json (read-json story-file))
-
-(define (clear-terminal-screen)
-  (displayln "\033c"))
 
 (define (handle-command-line-arguments)
   (cond
