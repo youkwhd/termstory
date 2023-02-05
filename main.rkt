@@ -18,7 +18,8 @@
 
 (define (story-iter story-json) 
   (if (not (vector-member "--no-terminal-clear" (current-command-line-arguments)))
-    (clear-terminal-screen))
+    (clear-terminal-screen)
+    (newline))
 
   (displayln (hash-ref story-json 'headline))
   (newline)
