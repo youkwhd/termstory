@@ -2,12 +2,20 @@
 
 (require json)
 
+(define termstory-version 0.1)
+
 ;; (define story-file-path "")
 (define story-file (open-input-file "./data/stories/demo.json"))
 (define story-json (read-json story-file))
 
 (define (clear-terminal-screen)
   (displayln "\033c"))
+
+(define (handle-command-line-arguments)
+  (cond
+    [(or (vector-member "--version" (current-command-line-arguments)) (vector-member "-v" (current-command-line-arguments)))
+     (printf "termstory v~a\n" termstory-version)
+     (exit)]))
 
 (define (display-choices lst __idx)
   (cond 
@@ -39,5 +47,6 @@
      (read-line)])
   (story-iter (hash-ref story-json 'main-story)))
 
+(handle-command-line-arguments)
 (story-begin story-json)
 (close-input-port story-file)
