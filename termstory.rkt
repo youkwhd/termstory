@@ -36,7 +36,7 @@
     [else
       (display-choices (hash-ref story-json 'options-input) 1)
       (display "> choose: ")
-      (story-iter (list-ref (hash-ref story-json 'options-action) (- (string->number (remove-non-numeric-string (read-line))) 1)))]))
+      (story-iter (list-ref (hash-ref story-json 'options-action) (- (string->number (read-line (current-input-port) 'any)) 1)))]))
 
 (define (story-begin story-json)
   (clear-terminal-screen)
